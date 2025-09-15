@@ -10,7 +10,7 @@ const BirthdayHero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center soft-gradient overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center gradient-hero overflow-hidden">
       {/* Floating decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 text-6xl animate-bounce" style={{ animationDelay: '0s' }}>🎈</div>

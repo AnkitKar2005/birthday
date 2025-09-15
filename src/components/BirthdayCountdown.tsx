@@ -11,16 +11,20 @@ const BirthdayCountdown = () => {
   });
 
   useEffect(() => {
-    // Get today's date
+    // Set birthday date to December 26th
     const today = new Date();
-    // Set next birthday (assuming it's today for the celebration)
-    const nextBirthday = new Date();
+    const currentYear = today.getFullYear();
+    const thisYearBirthday = new Date(currentYear, 11, 26); // December 26
     
-    // If birthday has passed this year, set it for next year
-    if (today.getMonth() > 11 || (today.getMonth() === 11 && today.getDate() > 26)) {
-      nextBirthday.setFullYear(today.getFullYear() + 1, 11, 26); // Assuming birthday is Dec 26
+    let nextBirthday;
+    
+    // Check if birthday has already passed this year
+    if (today > thisYearBirthday) {
+      // Birthday has passed, set it for next year
+      nextBirthday = new Date(currentYear + 1, 11, 26);
     } else {
-      nextBirthday.setFullYear(today.getFullYear(), 11, 26);
+      // Birthday hasn't happened yet this year
+      nextBirthday = thisYearBirthday;
     }
 
     const timer = setInterval(() => {
@@ -95,7 +99,7 @@ const BirthdayCountdown = () => {
         )}
 
         <div className="mt-12">
-          <Card className="p-8 bg-white/80 backdrop-blur-sm shadow-soft border-2 border-primary/20">
+          <Card className="p-8 bg-card/80 backdrop-blur-sm shadow-soft border-2 border-primary/20">
             <h3 className="font-script text-2xl font-bold text-primary mb-4">
               Fun Birthday Facts About You! 📊
             </h3>
