@@ -76,7 +76,7 @@ const QuotesSection = () => {
             return (
               <Card 
                 key={index}
-                className="quote-card p-8 bg-silver/95 backdrop-blur-sm shadow-birthday hover:shadow-glow transition-all duration-500 border-2 border-white/50 group"
+                className="quote-card p-8 bg-red/95 backdrop-blur-sm shadow-birthday hover:shadow-glow transition-all duration-500 border-2 border-white/50 group"
               >
                 <div className="text-center">
                   <div className={`inline-flex p-4 rounded-full bg-gradient-to-br from-primary/20 to-rose-gold/20 mb-6 group-hover:scale-110 transition-transform duration-300`}>
